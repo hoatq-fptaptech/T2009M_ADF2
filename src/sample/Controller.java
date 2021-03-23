@@ -1,14 +1,17 @@
 package sample;
 
+import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import sample.model.Student;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.ResourceBundle;
 
-public class Controller {
+public class Controller implements Initializable {
     public TextField txtName;
     public TextField txtMark;
     public TextArea txtAddress;
@@ -16,6 +19,12 @@ public class Controller {
 
     public static ArrayList<Student> ds = new ArrayList<>();
     public static boolean flag = true;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        // can lam gi khi mo app thi viet vao day
+    }
+
     public void submit(){
         String n = txtName.getText();
         String m = txtMark.getText();
