@@ -5,6 +5,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import sample.model.Student;
 
+import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,6 +24,19 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // can lam gi khi mo app thi viet vao day
+        try {
+            FileInputStream fis = new FileInputStream("student.bin");
+            DataInputStream dis = new DataInputStream(fis);
+            String txt = dis.readLine();
+            String txtTextArea = "";
+            while (txt !=null){
+                txtTextArea+= txt+"\n";
+                txt = dis.readLine();
+            }
+            ketqua.setText(txtTextArea);
+        }catch (IOException io){
+
+        }
     }
 
     public void submit(){
@@ -31,14 +45,33 @@ public class Controller implements Initializable {
         String a = txtAddress.getText();
         if(!n.isEmpty() && !m.isEmpty() && !a.isEmpty()){
            Integer diemthi = Integer.parseInt(m);// chuyen string thanh number
-           ds.add(new Student(n,diemthi,a));
+           //ds.add(new Student(n,diemthi,a));
+            Student s = new Student(n,diemthi,a);
            // ds.add(n+"--"+e+"--"+a+"\n");
-            // sort
-            String txt= "";
-            for(Student s:ds){
-                txt+= s.getName()+"--"+s.getMark()+"\n";
+            // goi file de output ra
+            try{
+                // lay du lieu cu
+                FileInputStream fis = new FileInputStream("student.bin");
+                DataInputStream dis = new DataInputStream(fis);
+                String txt = dis.readLine();
+                String txtTextArea = "";
+                while (txt !=null){
+                    txtTextArea+= txt+"\n";
+                    txt = dis.readLine();
+                }
+                txtTextArea += s.getName()+"--"+s.getMark()+"\n";
+                FileOutputStream fos = new FileOutputStream("student.bin");
+                DataOutputStream dos = new DataOutputStream(fos);
+                dos.writeBytes(txtTextArea);
+                ketqua.setText(txtTextArea);
+            }catch (IOException io){
             }
-            ketqua.setText(txt);
+            // sort
+//            String txt= "";
+//            for(Student s:ds){
+//                txt+= s.getName()+"--"+s.getMark()+"\n";
+//            }
+//            ketqua.setText(txt);
             txtName.setText("");
             txtMark.setText("");
             txtAddress.setText("");
