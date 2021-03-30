@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane fx:controller="quanlysinhvien.trangchu.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button onAction="#danhSach" layoutX="168.0" layoutY="74.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="264.0" text="Danh sach sinh vien">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="168.0" layoutY="187.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="264.0" text="Them sinh vien">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
