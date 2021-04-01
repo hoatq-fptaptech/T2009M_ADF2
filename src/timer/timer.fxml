@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane fx:controller="timer.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fx:id="txtMin" layoutX="222.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtSec" layoutX="322.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Text>
+      <Text layoutX="294.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>
