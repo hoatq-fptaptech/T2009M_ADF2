@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane fx:controller="timer.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="timer.Controller">
    <children>
-      <Text fx:id="txtMin" layoutX="222.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10">
+      <Text fx:id="txtMin" layoutX="222.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
          <font>
             <Font size="50.0" />
          </font>
@@ -21,5 +22,9 @@
             <Font size="50.0" />
          </font>
       </Text>
+      <TextField fx:id="inputTime" layoutX="203.0" layoutY="46.0" prefHeight="32.0" prefWidth="89.0" promptText="Minutes" />
+      <Button layoutX="322.0" layoutY="46.0" mnemonicParsing="false" onAction="#startTimer" prefHeight="32.0" prefWidth="61.0" text="Start" />
+      <Button fx:id="btnPause" layoutX="419.0" layoutY="143.0" mnemonicParsing="false" onAction="#pauseTimer" prefHeight="32.0" prefWidth="61.0" text="Pause" />
+      <Button onAction="#resetTimer" layoutX="412.0" layoutY="46.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="61.0" text="Reset" />
    </children>
 </Pane>
